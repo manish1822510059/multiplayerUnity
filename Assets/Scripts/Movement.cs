@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-    public float walkSpeed = 4f;
-    public float rotationSpeed = 4f;
-    public float maxVelocityChange = 10f;
-
-    private Vector2 input;
-    private Rigidbody rb;
-
     public static bool PlayerMoving = true;
+
+    public GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Starting");
-        rb = GetComponent<Rigidbody>();
+         
     }
 
     // Update is called once per frame
@@ -32,18 +27,18 @@ public class Movement : MonoBehaviour
 
     private void CalculateRotation()
     {
+        float playerRotationSpeed =  player.GetComponent<Player>().rotationSpeed;
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        
-        float rotationValue = horizontalInput * rotationSpeed * Time.deltaTime;
+        float rotationValue = horizontalInput * playerRotationSpeed * Time.deltaTime;
         transform.Rotate(0, rotationValue, 0);
     }
 
     private void CalculatePositon()
     {
+        float playerWalkSpeed =  player.GetComponent<Player>().walkSpeed;
         float verticalInput = Input.GetAxisRaw("Vertical");
-        
         Vector3 movementDirection = transform.forward * verticalInput;
-        Vector3 positionChange = movementDirection * walkSpeed * Time.deltaTime;
+        Vector3 positionChange = movementDirection * playerWalkSpeed * Time.deltaTime;
         this.transform.position += positionChange;
     }
 }
