@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class HpBarUi : MonoBehaviour
 {
+  
+   
     public Image filledBar;
     public Gradient gradient;
+    public GameOver gameOver;
 
     public Text hpText;
 
@@ -31,6 +34,7 @@ public class HpBarUi : MonoBehaviour
     // Update is called once per frame
     void UpdateUI()
     {
+        gameOver.GameOverCheck(curreentHp);
         hpText.text = curreentHp.ToString();
         if(maxHp == 0){
             Debug.Log("max Hp Can't be 0");
@@ -40,4 +44,6 @@ public class HpBarUi : MonoBehaviour
 
         filledBar.color = gradient.Evaluate(filledBar.fillAmount);
     }
+
+  
 }

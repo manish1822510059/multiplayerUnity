@@ -379,6 +379,7 @@
 "Assets/Scenes/RoomManager.cs"
 "Assets/Scripts/BoxCollider.cs"
 "Assets/Scripts/CameraFollow.cs"
+"Assets/Scripts/GameOver.cs"
 "Assets/Scripts/HpBarUi.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/_Gloomy_Animal/Script/CharacterSelect.cs"

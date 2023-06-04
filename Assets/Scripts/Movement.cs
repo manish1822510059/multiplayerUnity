@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     private Vector2 input;
     private Rigidbody rb;
 
+    public static bool PlayerMoving = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      if(PlayerMoving){
         CalculateRotation();
         CalculatePositon();
+      } 
     }
 
     private void CalculateRotation()
