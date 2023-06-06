@@ -4,7 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
-using System.Linq;
+
+
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
@@ -100,18 +101,19 @@ public override void OnRoomListUpdate(List<RoomInfo> roomList){
     }
      foreach (KeyValuePair<int,Player> player in PhotonNetwork.CurrentRoom.Players){
           PlayerItem newPlayerItem = Instantiate(playerItemPrefab,playerItemParent);
+          newPlayerItem.SetPlayerInfo(player.Value);
           playerItemsList.Add(newPlayerItem);
     }
    
   }
   public override void OnPlayerEnteredRoom(Player newPlayer){
-    // UpdatePlayerList();
+    UpdatePlayerList();
   }
 
   public override void OnPlayerLeftRoom(Player otherPlayer){
-    //  UpdatePlayerList();
+     UpdatePlayerList();
   }
-
+}
   
 
-}
+

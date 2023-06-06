@@ -7,12 +7,12 @@ public class Beak : MonoBehaviour
 
 private void OnTriggerEnter(Collider other)
 {
-    Player player = other.gameObject.GetComponent<Player>();
-    if(player)
+    Players players = other.gameObject.GetComponent<Players>();
+    if(players)
     {
         int damage = 10;
-        player.TakeDamage(damage);
-        player.hpBarUi.Attack(damage);
+        players.TakeDamage(damage);
+        players.hpBarUi.Attack(damage);
     }
 }
 
