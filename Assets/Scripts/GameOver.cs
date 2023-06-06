@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
 
     
-    float timer = 0f; 
+    // float timer = 0f; 
 
     
      private void Start()

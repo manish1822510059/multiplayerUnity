@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+   private int health;
+   private int maxHealth = 100;
+   public HpBarUi hpBarUi;
 
-    public  float walkSpeed = 10f;
-    public  float rotationSpeed = 300f;
-    // Start is called before the first frame update
+   private void Start()
+   {
+      health = maxHealth;
+   }
 
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-     public  void  PlayerHealth(){
+   public void PlayerHealth()
+   {
         // hpBarUi.Attack(10);
-     }
+   }
+
+   public void TakeDamage(int damage)
+   {
+      health -= damage;
+      Debug.Log("Updated health is: " + health);
+   }
 }
