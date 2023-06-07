@@ -387,7 +387,8 @@
 "Assets/Scripts/Lobby/RoomItem.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/Photon/RoomManager.cs"
-"Assets/Scripts/Player.cs"
+"Assets/Scripts/PlayerItem.cs"
+"Assets/Scripts/Players.cs"
 "Assets/Starfield Skybox/8K Skybox Pack Free/Example Scenes/Script/RotateCamera.cs"
 "Assets/Starfield Skybox/Demo/Script/LookCamera.cs"
 -langversion:9.0
